@@ -7,3 +7,5 @@
 
 out/
 generated_src/
+
+build/
