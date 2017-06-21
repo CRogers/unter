@@ -1,3 +1,5 @@
 package unter;
 
-public interface Event { }
+public interface Event {
+    String type();
+}

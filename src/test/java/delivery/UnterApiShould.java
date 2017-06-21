@@ -5,8 +5,9 @@ import org.junit.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class UnterApiShould {
-    private final UnterReadApi readApi = new UnterReadApi();
-    private final UnterWriteApi writeApi = new UnterWriteApi();
+    private final UnterProject unterProject = new UnterProject();
+    private final UnterReadApi readApi = unterProject.unterReadApi();
+    private final UnterWriteApi writeApi = unterProject.unterWriteApi();
 
     private final Username user = Username.of("user");
 
@@ -26,4 +27,5 @@ public class UnterApiShould {
 
         assertThat(readApi.timelineFor(user)).contains(hi);
     }
+
 }

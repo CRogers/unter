@@ -15,6 +15,7 @@ repositories {
 // In this section you declare the dependencies for your production and test code
 dependencies {
     compile group: 'com.google.guava', name: 'guava', version: '22.0'
+    compile 'one.util:streamex:0.6.5'
 
     processor 'org.immutables:value:2.5.3'
 

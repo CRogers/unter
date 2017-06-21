@@ -1,6 +1,6 @@
 package unter.message;
 
-import unter.EventBus;
+import unter.event.EventBus;
 import unter.entity.EntityId;
 
 public class MessageRepository {

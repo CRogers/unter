@@ -6,7 +6,6 @@ import unter.user.UserId;
 
 @Value.Immutable
 public abstract class SendMessage implements Command {
-    public abstract MessageId messageId();
     public abstract UserId userId();
     public abstract String contents();
 

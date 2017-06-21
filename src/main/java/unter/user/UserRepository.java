@@ -1,7 +1,7 @@
 package unter.user;
 
 import delivery.Username;
-import unter.EventBus;
+import unter.event.EventBus;
 
 public class UserRepository {
     private final EventBus eventBus;
@@ -12,7 +12,7 @@ public class UserRepository {
 
     public void newUserWithUsername(Username username) {
         UserId userId = UserId.random();
-        eventBus.submitEvent(CreateNewUser.with()
+        eventBus.submitEvent(NewUserCreated.with()
                 .userId(userId)
                 .username(username)
                 .build()

@@ -1,15 +1,25 @@
 package unter.message;
 
 import org.immutables.value.Value;
+import unter.Event;
 import unter.UnterImmutableStyle;
+import unter.user.UserId;
 
 @Value.Immutable
 @UnterImmutableStyle
-public abstract class MessageSent {
-    @Value.Parameter
-    public abstract String content();
+public abstract class MessageSent implements Event {
+    public abstract MessageId messageId();
+    public abstract UserId userId();
+    public abstract String contents();
 
-    public static MessageSent havingContent(String content) {
-        return ImmutableMessageSent.of(content);
+    @Override
+    public String type() {
+        return "MessageSent";
+    }
+
+    public static class Builder extends ImmutableMessageSent.Builder {}
+
+    public static Builder builder() {
+        return new Builder();
     }
 }

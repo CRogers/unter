@@ -11,10 +11,6 @@ public class UnterReadApi {
         this.timeline = timeline;
     }
 
-    public UnterReadApi() {
-        this(new Timeline());
-    }
-
     public List<Message> timelineFor(Username user) {
         return timeline.timelineFor(user);
     }
