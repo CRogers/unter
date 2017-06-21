@@ -1,4 +1,4 @@
-package unter.commands;
+package unter;
 
 public interface Command {
 }

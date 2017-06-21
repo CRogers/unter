@@ -2,7 +2,6 @@ package unter;
 
 import org.junit.After;
 import org.junit.Test;
-import unter.commands.Command;
 
 import java.util.function.Consumer;
 

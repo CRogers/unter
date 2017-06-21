@@ -8,15 +8,22 @@ public class UnterApiShould {
     private final UnterReadApi readApi = new UnterReadApi();
     private final UnterWriteApi writeApi = new UnterWriteApi();
 
+    private final Username user = Username.of("user");
+
     @Test
-    public void return_no_users_when_no_users_have_signed_up() {
-        assertThat(readApi.allUsers()).isEmpty();
+    public void return_no_messages_just_after_having_signed_up() {
+        writeApi.signUp(user);
+
+        assertThat(readApi.timelineFor(user)).isEmpty();
     }
 
     @Test
     public void return_a_user_when_a_single_user_has_signed_up() {
-        Username user = Username.of("user");
         writeApi.signUp(user);
-        assertThat(readApi.allUsers()).contains(user);
+
+        Message hi = Message.havingContent("hi");
+        writeApi.sendMessage(user, hi);
+
+        assertThat(readApi.timelineFor(user)).contains(hi);
     }
 }
